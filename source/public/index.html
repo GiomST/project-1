@@ -7,9 +7,189 @@
   <script src="scripts/index.js" type="module"></script>
 
   <link rel="stylesheet" href="styles/index.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
 </head>
-<body>
-<h1>Note App</h1>
+<body class="">
+  <div class="">
 
+    <!-- Add a note -->
+    <div class="container">
+      <div class="full-width">
+        <h2>
+          Add a note
+        </h2>
+      </div>
+      <div class="full-width">
+        <form>
+          <div class="full-width">
+            <div>
+              <label for="todo-title">Title</label>
+            </div>
+            <div>      
+              <input
+                type="text"
+                class="todo-title"
+                name="todo-title"
+                id="todo-title"
+                placeholder="Enter title"
+
+              >
+            </div>
+            <div>
+              <label for="todo-importance">Importance</label>
+            </div>
+            <div>      
+              <input
+                type="number"
+                class="todo-importance"
+                name="todo-importance"
+                id="todo-importance"
+                placeholder="0"
+                required
+              >
+            </div>
+            <div>
+              <label for="todo-duedate">Due Date</label>
+            </div>
+            <div>      
+              <input
+                type="date"
+                class="todo-duedate"
+                name="todo-duedate"
+                id="todo-duedate"
+                placeholder="0"
+              >
+            </div>
+            <div>
+              <label for="todo-description">Description</label>
+            </div>
+            <div>
+              <textarea 
+                class="todo-description"
+                id="todo-description" 
+                name="todo-description" 
+                rows="5" 
+                cols="33"
+                >Enter the description here
+              </textarea>
+            </div>
+            <div class="flex-left" id="checkbox">
+                <div>
+                  <input 
+                    type="checkbox"
+                    class="todo-completed"
+                    id="todo-completed" 
+                    name="todo-completed" 
+                    >
+                </div>
+                <div id="checkbox-label">
+                  <label for="todo-completed">Mark as "Completed"</label>
+                </div>
+            </div>
+          </div>
+          <button 
+            type="submit"
+            class="todo-submit"
+            >
+            Create & Thx
+          </button>
+        </form>
+        <div class="footnote">
+            (*) The following fields are required
+        </div>
+      </div>
+    </div>
+    <!-- Add a note -->
+
+
+    <!-- Display notes -->
+    <div class="container full-width">
+      <div class="row flex-center">
+        <div>
+          <!-- Logo -->
+        </div>
+        <button for="themeChange" id="themeIcon">
+          &#x2600
+        </button>
+      </div>
+      <div class="full-width">
+        <h1>Benjamiin Note App</h1>
+      </div>
+      <div class="row">
+        <button class="button-main bg-primary">
+          Create new task
+        </button>
+        <div>
+          <button>
+            open
+          </button>
+          <button>
+            archive
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <button class="button-control bg-secondary">
+          Sort by Name &nbsp;&nbsp;&#x2193;
+        </button>
+        <button class="button-control bg-secondary">
+          Sort by Creation Date
+        </button>
+        <button class="button-control bg-secondary">
+          Sort by Due Date
+        </button>
+        <button class="button-control bg-secondary">
+          Sort by Importance
+        </button>
+      </div>
+      <div class="todo-container">
+        <ul class="todo-list"></ul>
+
+      <!-- Task 
+      <div class="row task">
+        <div class="flex">
+          <div>
+            <div>
+              Deadline
+            </div>
+            <div>
+              <div class="flex-left">
+                <div>
+                  <input type="checkbox"  name="completed">
+                </div>
+                <div id="checkbox-label">
+                  <label>Completed</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              Title
+            </div>
+            <div>
+              Description
+            </div>
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+            Priority
+          </div>
+          <div>
+            <button>
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
+      Task -->
+      
+      </div>
+    </div>
+    <!-- Display notes -->
+
+
+  </div>
 </body>
 </html>
