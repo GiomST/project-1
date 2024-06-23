@@ -1,0 +1,365 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+#app {
+    max-width: 50rem;
+    margin: 3.125rem auto;
+    padding: 1.25rem;
+    background-color: #ffffff;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+}
+
+h1.todo-titel {
+    text-align: center;
+    color: #004d40;
+}
+
+.todo-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin-bottom: 1.25rem;
+    align-items: center;
+}
+
+.todo-form input[type="text"],
+.todo-form input[type="date"],
+.todo-form select {
+    flex: 1;
+    padding: 0.625rem;
+    border: 0.0625rem solid #80cbc4;
+    border-radius: 0.3125rem;
+}
+
+.todo-button {
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    height: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo-button:hover {
+    background-color: #004d40;
+}
+
+.sortier-filter-bereich {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+
+.sortier-filter-bereich button {
+    flex: 1;
+    margin: 0 0.3125rem;
+    background-color: #1072e2;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 0;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    height: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sortier-filter-bereich button:hover {
+    background-color: #00695c;
+}
+
+.todo-list {
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.625rem;
+    border-bottom: 0.0625rem solid #80cbc4;
+}
+
+.todo-item span {
+    border: none;
+    padding: 0 0.625rem;
+}
+
+.todo-item:nth-child(odd) {
+    background-color: #b2dfdb;
+}
+
+.todo-faelligkeit,
+.todo-text,
+.todo-beschreibung,
+.todo-wichtigkeit {
+    flex: 1;
+    margin: 0 0.625rem;
+}
+
+button.todo-bearbeiten,
+button.todo-erledigt {
+    border: none;
+    padding: 0.3125rem 0.625rem;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+button.todo-bearbeiten {
+    background-color: #4caf50;
+}
+
+button.todo-bearbeiten:hover {
+    background-color: #388e3c;
+}
+
+button.todo-erledigt {
+    background-color: #00796b;
+}
+
+button.todo-erledigt:hover {
+    background-color: #004d40;
+}
+
+.todo-formular {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    max-width: 37.5rem;
+    margin: 0 auto;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
+    background-color: #e0f2f1;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+.todo-input,
+.todo-beschreibung,
+.todo-wichtigkeit,
+.todo-datum,
+.todo-speichern {
+    width: 100%;
+    padding: 0.625rem;
+    margin: 0.3125rem 0;
+    border: 0.0625rem solid #004d40;
+    border-radius: 0.3125rem;
+    box-sizing: border-box;
+    outline: none;
+    box-shadow: none;
+}
+
+.todo-input,
+.todo-datum {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.todo-beschreibung {
+    resize: vertical;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.todo-abgeschlossen,
+.checkbox-label {
+    margin: 0;
+}
+
+.todo-speichern {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.todo-speichern:hover {
+    background-color: #fb8c00;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.todo-status[data-abgeschlossen="true"] {
+    color: green;
+    font-size: 1.25rem;
+}
+
+.todo-status[data-abgeschlossen="false"]::before {
+    content: "\231B";
+    color: #ffa000;
+    font-size: 1rem;
+}
+
+.todo-wichtigkeit {
+    color: #ffd600;
+    font-size: 1rem;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.input-error {
+    border-color: red;
+    box-shadow: 0 0 0.25rem red;
+}
+
+body.dark-mode {
+    background-color: #1E293B;
+    color: #F1F5F9;
+}
+
+body.dark-mode .todo-formular {
+    background-color: #374151;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.7);
+}
+
+.dark-mode-button {
+    background-color: #8B5CF6;
+    color: #F1F5F9;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    margin-left: auto;
+    height: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode-button:hover {
+    background-color: #A78BFA;
+}
+
+body.dark-mode #app {
+    background-color: #4B5563;
+}
+
+body.dark-mode .todo-item {
+    background-color: #374151;
+    border-bottom-color: #8B5CF6;
+}
+
+body.dark-mode .todo-form input,
+body.dark-mode .todo-form select,
+body.dark-mode .todo-form textarea {
+    background-color: #4B5563;
+    color: #F1F5F9;
+    border-color: #1F2937;
+}
+
+body.dark-mode .todo-form input:focus,
+body.dark-mode .todo-form select:focus,
+body.dark-mode .todo-form textarea:focus {
+    border-color: #A78BFA;
+}
+
+body.dark-mode .todo-form input[type="text"],
+body.dark-mode .todo-form input[type="date"],
+body.dark-mode .todo-form select {
+    background-color: #4B5563;
+    color: #F1F5F9;
+    border: 0.0625rem solid #A78BFA;
+}
+
+body.dark-mode .todo-speichern {
+    background-color: #8B5CF6;
+    color: #F1F5F9;
+}
+
+body.dark-mode .todo-speichern:hover {
+    background-color: #A78BFA;
+}
+
+body.dark-mode .error-message {
+    color: #F97316;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+body.dark-mode .input-error {
+    border-color: #F97316;
+    box-shadow: 0 0 0.25rem #F97316;
+}
+
+
+@media (max-width: 48rem) {
+    #app {
+        margin: 0.625rem;
+        padding: 0.9375rem;
+    }
+
+    .todo-form {
+        flex-direction: column;
+    }
+
+    .sortier-filter-bereich {
+        flex-direction: column;
+    }
+
+    .sortier-filter-bereich button,
+    .todo-button {
+        width: 100%;
+        margin: 0.3125rem 0;
+    }
+
+    .todo-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .todo-faelligkeit,
+    .todo-text,
+    .todo-beschreibung,
+    .todo-wichtigkeit {
+        margin: 0.3125rem 0;
+    }
+
+    .todo-bearbeiten {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 30rem) {
+    .todo-formular {
+        padding: 0.625rem;
+    }
+
+    .todo-input,
+    .todo-beschreibung,
+    .todo-wichtigkeit,
+    .todo-datum,
+    .todo-speichern {
+        padding: 0.5rem;
+    }
+}
+
